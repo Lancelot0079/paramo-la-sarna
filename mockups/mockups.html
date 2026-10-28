@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Mockups · La Sarna</title>
+<link href="https://fonts.googleapis.com/css2?family=Besley:wght@800&family=Libre+Franklin:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--canvas:#e9e9e9;--frame:#fff;--line:#c4c4c4;--box:#dcdcdc;--ink:#1e1e1e;--soft:#6b6b6b;--pin:#7b61ff;--note:#fff4c2;--dark:#12150f;--amber:#f0b23e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);font:14px/1.45 Inter,"Segoe UI",system-ui,sans-serif;color:var(--ink)}
+.board{width:1600px;height:1000px;padding:56px 64px;position:relative;display:none}
+.board.show{display:block}
+.title{font-size:28px;font-weight:700;margin:0 0 4px}
+.sub{color:var(--soft);margin:0 0 32px;font-size:15px}
+.flabel{font-size:12px;color:var(--soft);margin-bottom:6px;font-weight:600}
+.frame{background:var(--frame);box-shadow:0 1px 3px rgba(0,0,0,.12);position:relative;overflow:hidden}
+.ph{background:var(--box);position:relative;overflow:hidden}
+.ph::before,.ph::after{content:"";position:absolute;left:0;top:50%;width:141%;height:1px;background:var(--line);transform-origin:0 0}
+.ph.x::before{top:0;transform:rotate(var(--a,32deg))}
+.ph.x::after{top:100%;transform:rotate(calc(var(--a,32deg)*-1))}
+.ph span{position:absolute;inset:auto 0 8px 0;text-align:center;font-size:12px;color:var(--soft);z-index:1}
+.bar{height:10px;background:var(--box);border-radius:2px;margin-bottom:8px}
+.bar.d{background:#9a9a9a}.bar.h{height:22px;background:#4a4a4a}.bar.a{background:var(--amber)}
+.note{position:absolute;background:var(--note);padding:12px 14px;width:260px;font-size:13px;box-shadow:0 2px 6px rgba(0,0,0,.15);border-radius:2px}
+.note b{display:block;margin-bottom:4px}
+.pin{position:absolute;width:26px;height:26px;border-radius:50%;background:var(--pin);color:#fff;font-weight:700;font-size:13px;display:grid;place-items:center;box-shadow:0 0 0 3px #fff}
+.note .pin{position:static;display:inline-grid;margin-right:6px;box-shadow:none;width:22px;height:22px;font-size:12px}
+.row{display:flex;gap:48px;align-items:flex-start}
+.chip{display:inline-block;padding:6px 10px;border:1px solid var(--line);background:#fff;border-radius:4px;font-size:12px;margin:0 6px 6px 0}
+.flow{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.node{background:#fff;border:2px solid var(--ink);padding:14px 16px;width:160px;border-radius:6px}
+.node small{display:block;color:var(--soft);font-size:12px;margin-top:4px}
+.node.full{border-color:var(--pin)}
+.arrow{font-size:22px;color:var(--soft)}
+.sw{width:150px}
+.sw div{height:90px;border-radius:4px;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<!-- 1 · Arquitectura -->
+<section class="board" id="b1">
+  <p class="title">1 · Arquitectura de la información</p>
+  <p class="sub">La página se ordena como una presentación: cada capítulo responde una pregunta. Primero los hechos, después las personas, la justicia y al final la reflexión.</p>
+  <div class="flow">
+    <div class="node">Portada<small>¿Qué pasó, cuándo, dónde?</small></div><span class="arrow">→</span>
+    <div class="node">Contexto<small>¿Por qué ahí?</small></div><span class="arrow">→</span>
+    <div class="node full">El día<small>Las 7 horas, interactivo</small></div><span class="arrow">→</span>
+    <div class="node">Víctimas<small>15 nombres</small></div><span class="arrow">→</span>
+    <div class="node full">Cifras<small>15 de 18 · 7 h</small></div>
+  </div>
+  <div class="flow" style="margin-top:22px">
+    <span class="arrow">→</span>
+    <div class="node">Justicia<small>2001 → 2022</small></div><span class="arrow">→</span>
+    <div class="node full">Sentencia<small>Lo que ordenó el Consejo de Estado</small></div><span class="arrow">→</span>
+    <div class="node full">Memoria<small>15 veletas, peregrinación</small></div><span class="arrow">→</span>
+    <div class="node full">Discusión<small>4 preguntas de filosofía política</small></div>
+  </div>
+  <div class="row" style="margin-top:48px">
+    <div><span class="chip" style="border:2px solid var(--ink)">Pantalla partida</span><span class="chip" style="border:2px solid var(--pin)">Ancho completo</span></div>
+  </div>
+  <div class="note" style="left:64px;top:560px;width:430px"><b><span class="pin">A</span>Por qué este orden</b>Se cuenta como un relato: primero quien llega entiende el hecho. Luego le pone rostro (los nombres antes que las cifras, para que los números no reemplacen a las personas) y después ve la respuesta del Estado y la memoria.</div>
+  <div class="note" style="left:540px;top:560px;width:430px"><b><span class="pin">B</span>Por qué se alternan los formatos</b>Si todas las pantallas tuvieran la misma forma, la presentación se volvería monótona. Por eso los bloques de pantalla partida se alternan con bloques a ancho completo, que marcan los momentos clave.</div>
+  <div class="note" style="left:1016px;top:560px;width:430px"><b><span class="pin">C</span>Modo presentación</b>Cada capítulo es una «diapositiva»: con ← → se salta entre ellos, para exponer en clase sin otro programa.</div>
+</section>
+
+<!-- 2 · Escritorio -->
+<section class="board" id="b2">
+  <p class="title">2 · Wireframe escritorio · 1440 px</p>
+  <p class="sub">Composición «escenario partido»: el texto avanza y el paisaje se queda fijo.</p>
+  <div class="row">
+    <div>
+      <div class="flabel">Desktop · Portada</div>
+      <div class="frame" style="width:760px;height:475px;display:grid;grid-template-columns:1fr 1fr">
+        <div style="padding:70px 44px 0">
+          <div class="bar d" style="width:90px;height:8px;margin-bottom:40px"></div>
+          <div class="bar h" style="width:250px;height:40px"></div>
+          <div class="bar h" style="width:200px;height:40px;margin-bottom:22px"></div>
+          <div class="bar a" style="width:220px"></div><div class="bar a" style="width:200px;margin-bottom:20px"></div>
+          <div class="bar" style="width:290px"></div><div class="bar" style="width:280px"></div><div class="bar" style="width:240px;margin-bottom:24px"></div>
+          <div style="width:150px;height:34px;background:var(--amber)"></div>
+        </div>
+        <div class="ph x" style="--a:32deg"><span>Foto fija · páramo con niebla</span></div>
+      </div>
+      <div class="pin" style="left:150px;top:220px">1</div>
+      <div class="pin" style="left:820px;top:260px">2</div>
+      <div class="pin" style="left:150px;top:470px">3</div>
+    </div>
+    <div>
+      <div class="flabel">Desktop · Cifras (ancho completo)</div>
+      <div class="frame" style="width:600px;height:340px;display:grid;grid-template-columns:2fr 1fr">
+        <div class="ph x" style="--a:30deg"><span>Foto del páramo</span></div>
+        <div style="display:grid;grid-template-rows:1fr 1fr"><div style="background:var(--amber);padding:18px;font:800 46px Georgia">15</div><div style="background:#c9cec3;padding:18px;font:800 46px Georgia">7 h</div></div>
+      </div>
+      <div class="pin" style="left:1430px;top:300px">4</div>
+    </div>
+  </div>
+  <div class="note" style="left:64px;top:700px"><b><span class="pin">1</span>Titular corto y grande</b>«Masacre de La Sarna» en dos líneas. Lo primero que se lee responde qué pasó.</div>
+  <div class="note" style="left:360px;top:700px"><b><span class="pin">2</span>Foto fija que cambia</b>La foto queda pegada mientras se lee y cambia con un fundido al pasar de capítulo: el paisaje siempre está presente.</div>
+  <div class="note" style="left:656px;top:700px"><b><span class="pin">3</span>Una sola acción</b>Un botón ámbar, «Recorrer la cronología». No compite con nada más.</div>
+  <div class="note" style="left:952px;top:700px;width:300px"><b><span class="pin">4</span>Las cifras como golpe</b>Dos números enormes sobre bloques de color plano. Rompen la pantalla partida a propósito.</div>
+</section>
+
+<!-- 3 · Móvil -->
+<section class="board" id="b3">
+  <p class="title">3 · Wireframes móvil y horizontal</p>
+  <p class="sub">React detecta el tipo de pantalla y cambia la forma de los componentes, no solo su tamaño.</p>
+  <div class="row" style="gap:40px">
+    <div><div class="flabel">Móvil · 390</div>
+      <div class="frame" style="width:220px;height:470px">
+        <div style="height:34px;display:flex;justify-content:space-between;align-items:center;padding:0 12px"><div class="bar d" style="width:60px;margin:0"></div><div style="width:58px;height:20px;background:var(--box)"></div></div>
+        <div class="ph x" style="height:140px;--a:32deg"><span>Foto</span></div>
+        <div style="padding:16px 12px"><div class="bar h" style="width:150px"></div><div class="bar h" style="width:110px;margin-bottom:14px"></div><div class="bar a" style="width:160px"></div><div class="bar" style="width:190px"></div><div class="bar" style="width:180px;margin-bottom:16px"></div><div style="height:34px;background:var(--amber)"></div></div>
+      </div></div>
+    <div><div class="flabel">Móvil · El día (tarjeta a tarjeta)</div>
+      <div class="frame" style="width:220px;height:470px;padding:16px 12px">
+        <div class="bar h" style="width:140px"></div><div class="bar h" style="width:100px;margin-bottom:18px"></div>
+        <div style="height:30px;background:var(--box);position:relative;margin-bottom:22px"><div style="position:absolute;left:20%;width:70%;top:0;bottom:0;background:var(--amber)"></div></div>
+        <div style="background:#f3f3f3;padding:14px;height:170px"><div class="bar a" style="width:90px"></div><div class="bar d" style="width:120px"></div><div class="bar"></div><div class="bar"></div><div class="bar" style="width:70%"></div></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px"><div style="width:38px;height:38px;background:var(--amber)"></div><div style="display:flex;gap:6px">●○○○○</div><div style="width:38px;height:38px;background:var(--amber)"></div></div>
+      </div></div>
+    <div><div class="flabel">Móvil · Veletas en 3 filas</div>
+      <div class="frame" style="width:220px;height:470px;padding:30px 12px;font:700 34px/1.5 Georgia;letter-spacing:8px;color:#9a9a9a;text-align:center">⚑⚑⚑⚑⚑<br>⚑⚑⚑⚑⚑<br>⚑⚑⚑⚑⚑<div style="font:13px system-ui;letter-spacing:0;color:var(--ink);margin-top:20px">Toque una veleta para leer el nombre</div></div></div>
+    <div><div class="flabel">Teléfono horizontal · 812 × 375</div>
+      <div class="frame" style="width:470px;height:217px;display:grid;grid-template-columns:1.2fr .8fr">
+        <div style="padding:30px 18px"><div class="bar h" style="width:170px"></div><div class="bar h" style="width:130px;margin-bottom:12px"></div><div class="bar a" style="width:160px"></div><div class="bar" style="width:200px"></div></div>
+        <div class="ph x" style="--a:25deg"><span>Foto fija</span></div>
+      </div></div>
+  </div>
+  <div class="note" style="left:64px;top:700px"><b>La foto arriba, más baja</b>En el teléfono la foto va primero, a un tercio de la altura, para que el titular y el botón se vean sin bajar.</div>
+  <div class="note" style="left:350px;top:700px"><b>Cinco tarjetas se vuelven una</b>Cinco tarjetas apiladas obligaban a bajar mucho. En el móvil se ve un momento a la vez y se avanza deslizando el dedo.</div>
+  <div class="note" style="left:636px;top:700px"><b>Veletas legibles</b>Quince veletas en una fila serían diminutas en un teléfono. Por eso se dibujan en 5, 8 o 15 por fila, según el ancho.</div>
+  <div class="note" style="left:922px;top:700px;width:300px"><b>Horizontal recupera la división</b>Con poca altura vuelve la pantalla partida y el titular se achica para caber.</div>
+</section>
+
+<!-- 4 · Sistema visual -->
+<section class="board" id="b4">
+  <p class="title">4 · Sistema visual: por qué estos colores y letras</p>
+  <p class="sub">Todo sale del propio páramo y de la consigna de las familias: «mantengamos encendida la luz de la memoria».</p>
+  <div class="row">
+    <div class="sw"><div style="background:#12150f"></div><b>#12150f</b><br>Turba de noche · fondo</div>
+    <div class="sw"><div style="background:#1b1f17"></div><b>#1b1f17</b><br>Pajonal en sombra · superficies</div>
+    <div class="sw"><div style="background:#e6e8e3;border:1px solid #ccc"></div><b>#e6e8e3</b><br>Niebla · texto</div>
+    <div class="sw"><div style="background:#c9cec3"></div><b>#c9cec3</b><br>Frailejón · bloques claros</div>
+    <div class="sw"><div style="background:#f0b23e"></div><b>#f0b23e</b><br>Luz de vela · acento único</div>
+  </div>
+  <div class="row" style="margin-top:48px">
+    <div class="frame" style="width:640px;padding:28px;background:var(--dark);color:#e6e8e3">
+      <div style="font:800 64px/1 Besley,Georgia,serif;letter-spacing:-1px">Masacre de La Sarna</div>
+      <div style="font:400 18px/1.5 'Libre Franklin',system-ui;margin-top:18px">Libre Franklin para leer: una sans-serif sobria, legible en pantalla y en proyector.</div>
+    </div>
+    <div style="width:520px">
+      <div class="note" style="position:static;width:auto;margin-bottom:16px"><b>Besley para títulos</b>Una slab-serif pesada, como los titulares de los periódicos de la época. Da peso de documento y de denuncia.</div>
+      <div class="note" style="position:static;width:auto;margin-bottom:16px"><b>Un solo acento</b>El ámbar solo aparece en lo importante: botones, fechas, las velas de los nombres, las 7 horas. Así la mirada va donde debe.</div>
+      <div class="note" style="position:static;width:auto"><b>Sin adornos</b>No hay degradados, sombras ni iconos. Es un tema de memoria: los protagonistas son los hechos y los nombres.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · Interacciones -->
+<section class="board" id="b5">
+  <p class="title">5 · Interacciones y transiciones</p>
+  <p class="sub">Cada movimiento tiene un significado ligado al caso, no es decoración.</p>
+  <div class="row" style="gap:36px">
+    <div><div class="flabel">El día · control deslizante</div>
+      <div class="frame" style="width:440px;padding:22px">
+        <div style="height:40px;background:var(--box);position:relative"><div style="position:absolute;left:20%;width:70%;top:0;bottom:0;background:#9a9a9a"></div><div style="position:absolute;left:20%;width:38%;top:0;bottom:0;background:var(--amber)"></div></div>
+        <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--soft);margin:8px 0 22px"><span>05:00</span><span>07:00</span><span>14:00</span><span>15:00</span></div>
+        <div style="height:4px;background:var(--box);position:relative"><div style="position:absolute;left:58%;top:-8px;width:20px;height:20px;border-radius:50%;background:var(--amber)"></div></div>
+      </div>
+      <div class="note" style="position:static;width:440px;margin-top:14px"><b>Se ve el vacío</b>La barra ámbar crece de las 7:00 a las 14:00: así se ve el tiempo en que el Estado no llegó.</div></div>
+    <div><div class="flabel">Víctimas · velas</div>
+      <div class="frame" style="width:380px;padding:20px">
+        <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px"><i style="width:10px;height:14px;border-radius:50%;background:var(--amber)"></i><div class="bar d" style="width:180px;margin:0"></div><div class="bar" style="width:90px;margin:0 0 0 auto"></div></div>
+        <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px"><i style="width:10px;height:14px;border-radius:50%;background:var(--amber)"></i><div class="bar d" style="width:140px;margin:0"></div><div class="bar" style="width:70px;margin:0 0 0 auto"></div></div>
+        <div style="display:flex;gap:10px;align-items:center"><i style="width:10px;height:14px;border-radius:50%;background:var(--box)"></i><div class="bar d" style="width:160px;margin:0"></div><div class="bar" style="width:80px;margin:0 0 0 auto"></div></div>
+      </div>
+      <div class="note" style="position:static;width:380px;margin-top:14px"><b>Una vela por nombre</b>Al aparecer cada nombre se enciende una llama que parpadea: es la consigna de las familias llevada a la pantalla.</div></div>
+    <div><div class="flabel">Transiciones</div>
+      <div class="frame" style="width:440px;padding:22px;font-size:14px">
+        <p style="margin:0 0 10px"><b>Fundido de la foto fija</b> · 1,6 s al cambiar de capítulo</p>
+        <p style="margin:0 0 10px"><b>Entrada escalonada</b> · título, texto e imagen suben 26 px, cada uno 80 ms después del anterior</p>
+        <p style="margin:0 0 10px"><b>Veletas con el viento</b> · giran al hacer scroll</p>
+        <p style="margin:0 0 10px"><b>Zoom lento</b> · las fotos se acercan al entrar</p>
+        <p style="margin:0"><b>Movimiento reducido</b> · si el sistema lo pide, todo queda quieto</p>
+      </div></div>
+  </div>
+</section>
+
+<script>
+const n = new URLSearchParams(location.search).get('b');
+document.querySelectorAll('.board').forEach((b, i) => { if (!n || +n === i + 1) b.classList.add('show'); });
+</script>
+</body>
+</html>
