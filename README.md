@@ -55,7 +55,6 @@ Después de editar, `npm run build` regenera la carpeta `docs/`, que es la que p
 | `src/hooks.js` | Detección de pantalla y de capítulo activo |
 | `src/styles.css` | Estilos y reglas por tamaño de pantalla |
 | `public/assets/` | Imágenes |
-| `version-html/` | Versión anterior en HTML puro |
 
 ## Mockups: cómo y por qué se diseñó así
 
